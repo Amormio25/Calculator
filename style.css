@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "calculator-font";
+    src: url("./digital-7/digital-7.ttf");
+}
+
+body {
+    height: 100vh;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    height: 550px;
+    width: 375px;
+    background-color: rgb(43, 42, 42);
+    border-radius: 20px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 5px 3px 1px rgb(31, 30, 30);
+}
+
+#screen {
+    height: 80px;
+    width: 330px;
+    background-color: rgb(128, 175, 128);
+    border: 2px solid rgb(39, 44, 39);
+    border-radius: 8px;
+    box-shadow: 2px 5px 3px 1px rgb(65, 93, 65) inset;
+    font-family: "calculator-font";
+}
+
+#expression {
+    height: 32px;
+    width: 330px;
+}
+
+#answer {
+    height: 48px;
+    width: 330px;
+}
+
+#calc-btns {
+
+}
