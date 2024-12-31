@@ -12,11 +12,12 @@ body {
 }
 
 #calculator {
-    height: 550px;
+    height: 470px;
     width: 375px;
-    background-color: rgb(43, 42, 42);
-    border-radius: 20px;
+    background-color: rgb(40, 40, 40);
     padding-top: 20px;
+    border: 3px solid rgb(31, 30, 30);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,33 +46,52 @@ body {
 }
 
 #calc-btns {
-    height: 425px;
+    height: 345px;
     width: 330px;
+    background-color: rgb(48, 48, 48);
+    padding: 5px;
+    border-radius: 5px;
     display: flex;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    gap: 8px;
     height: inherit;
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-.btns {
+.smallBtn, .bigBtn {
+    height: 17%;
+    width: 90%;
+    background-color: rgb(23, 23, 23);
     box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0px 0px rgb(26, 24, 24), 
+                            2px 5px 3px 1px rgb(41, 41, 41) inset;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 8px;
-    /* margin: 2px; */
-    background-color: rgb(23, 23, 23);
     color: white;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
                             'Lucida Sans', Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: 650;
+}
+
+.bigBtn {
+    height: 36.5%;
+}
+
+.smallBtn:hover, .bigBtn:hover {
+    opacity: 0.8;
+}
+.smallBtn:active, .bigBtn:active {
+    transform: scale(0.97);
+    transform-origin: bottom right;
+    transition: 0.075s ease-out;
 }
