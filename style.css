@@ -88,10 +88,52 @@ body {
 }
 
 .smallBtn:hover, .bigBtn:hover {
-    opacity: 0.8;
+    background-color: rgb(27, 27, 27);
 }
 .smallBtn:active, .bigBtn:active {
     transform: scale(0.97);
     transform-origin: bottom right;
     transition: 0.075s ease-out;
+    box-shadow: 1.8px 1.8px 0px 0px rgb(22, 24, 24), 
+                            2px 5px 3px 1px rgb(41, 41, 41) inset;
+}
+
+.deleteButtons {
+    border: 1px solid rgb(78, 10, 10);
+    background-color: rgb(166, 16, 16);
+    box-shadow: 2px 2px 0px 0px rgb(115, 16, 16), 
+                            2px 5px 3px 1px rgb(204, 60, 60) inset;
+}
+
+.deleteButtons:hover {
+    background-color: rgb(180, 31, 31);
+}
+
+.deleteButtons:active {
+    box-shadow: 1.8px 1.8px 0px 0px rgb(111, 16, 16), 
+                            2px 5px 3px 1px rgb(204, 60, 60) inset;
+}
+
+.equals:hover {
+    border: 1px solid rgb(9, 63, 5);
+    background-color: rgb(26, 169, 16);
+    box-shadow: 2px 2px 0px 0px rgb(12, 89, 7), 
+                            2px 5px 3px 1px rgb(60, 201, 49) inset;
+}
+
+.equals:active {
+    box-shadow: 1.8px 1.8px 0px 0px rgb(7, 79, 8), 
+                            2px 5px 3px 1px rgb(60, 201, 49) inset;
+}
+
+.operations:hover {
+    border: 1px solid rgb(5, 30, 63);
+    background-color: rgb(16, 75, 169);
+    box-shadow: 2px 2px 0px 0px rgb(7, 40, 89), 
+                            2px 5px 3px 1px rgb(39, 107, 179) inset;
+}
+
+.operations:active {
+    box-shadow: 1.8px 1.8px 0px 0px rgb(2, 40, 89), 
+                            2px 5px 3px 1px rgb(39, 107, 179) inset;
 }

@@ -19,6 +19,7 @@ buttonLabels.forEach((label, index) => {
     
     if (currentBtn.textContent == "+") currentBtn.classList.add("bigBtn");
     else currentBtn.classList.add("smallBtn");
+    colorButtons(currentBtn.textContent, currentBtn);
 
     if (index < 5) 
         col1.appendChild(currentBtn);
@@ -29,3 +30,17 @@ buttonLabels.forEach((label, index) => {
     else if (index < 19) 
         col4.appendChild(currentBtn);
 })
+
+// button colors
+// make ac and del red, same hover effect as current
+// for plus minus, make hover red if current num is positive, green if negative
+// hover blue for others, hover green for equal
+
+function colorButtons(text, btn) {
+    if (text == "AC" || text == "DEL") 
+        btn.classList.add("deleteButtons");
+    else if (text == "=")
+        btn.classList.add("equals");
+    else if (text == "÷" || text == "×" || text == "-" || text == "+")
+        btn.classList.add("operations");
+}
