@@ -11,8 +11,6 @@ let secondNum = '0';
 let operator = '';
 let editingFirst = true;
 let validOperators = ['+', '-', '×', '÷', '='];
-
-
 answer.textContent = '0';
 
 const buttonLabels = [
@@ -78,20 +76,16 @@ function selectNumber(event) {
                 }
                 answer.textContent = firstNum;
             }
+        } else if (event.target.textContent === '+/-') {
+            firstNum = (parseFloat(firstNum) * -1).toString();
+            answer.textContent = firstNum;
         } else {
-            //console.log("here")
             let number = parseInt(event.target.textContent);
-            //console.log(firstNum)
-            //console.log("first num length: " + firstNum.length)
-            //console.log("edit2: " + editingFirst)
             if (firstNum.length < 17 && Number.isInteger(number)) {
-                //console.log("over here")
                 if (answer.textContent == '0') {
-                    //console.log("wrong")
                     answer.textContent = ''.concat(number);
                     firstNum = answer.textContent;
                 } else {
-                    //console.log("here now")
                     answer.textContent = answer.textContent.concat(number);
                     firstNum = answer.textContent;
                 }
@@ -107,6 +101,9 @@ function selectNumber(event) {
                 }
                 answer.textContent = secondNum;
             }
+        } else if (event.target.textContent === '+/-') {
+            secondNum = (parseFloat(secondNum) * -1).toString();
+            answer.textContent = secondNum;
         } else {
             let number = parseInt(event.target.textContent);
             if (secondNum.length < 17 && Number.isInteger(number)) {
@@ -122,35 +119,22 @@ function selectNumber(event) {
     }
 }
 
-function selectOperator(event) {// if event is an operator
-    //      if current operator is not empty string
-    //          if second num is 0 (default), change the operator
-    //          if second num is not 0 (user edited), operate on first two 
-    //              numbers and make the value as firstNum, then make event the new operator
-    //      if current operator is an empty string
-    //          simply do the stuff in the else block (switch to second)
+function selectOperator(event) {
     if (validOperators.includes(event.target.textContent)) {
         if (operator != '') {
-            //console.log(3)
             if (secondNum == '0') {
                 operator = event.target.textContent;
                 expression.textContent = `${firstNum} ${operator} `;
             } else {
                 solve(event);
                 if (editingFirst) {
-                    // display answer on text and expressions above
-                    //console.log(5)
-                    //console.log(" edit" + editingFirst)
                 } else {
-                    // put chained answer on expression and make textcontent 
                     operator = event.target.textContent;
                     expression.textContent = `${firstNum} ${operator} `;
                     answer.textContent = 0;
-                    //console.log(6)
                 }                
             }
         } else {
-            //console.log(4)
             operator = event.target.textContent;
             editingFirst = false;
             expression.textContent = `${firstNum} ${operator} `;
@@ -172,13 +156,9 @@ function solve(event) {
 
     expression.textContent = expression.textContent.concat(secondNum);
     answer.textContent = firstNum.toString().substring(0,17);
-    //console.log(1)
-    //console.log(operator)
     secondNum = '0';
     editingFirst = (event.target.textContent == '=') ? true : false;
     operator = '';
-    //console.log(2)
-    //console.log(operator)
 }
 
 function add(x, y) {
