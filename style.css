@@ -95,6 +95,7 @@ body {
                             'Lucida Sans', Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: 650;
+    cursor: pointer;
 }
 
 .bigBtn {
