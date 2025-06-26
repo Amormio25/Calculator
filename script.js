@@ -78,7 +78,7 @@ function selectNumber(event) {
             }
         } else if (event.target.textContent === '+/-') {
             firstNum = (parseFloat(firstNum) * -1).toString();
-            answer.textContent = firstNum;
+            answer.textContent = firstNum.substring(0,17);
         } else {
             let number = parseInt(event.target.textContent);
             if (firstNum.length < 17 && Number.isInteger(number)) {
@@ -103,7 +103,7 @@ function selectNumber(event) {
             }
         } else if (event.target.textContent === '+/-') {
             secondNum = (parseFloat(secondNum) * -1).toString();
-            answer.textContent = secondNum;
+            answer.textContent = secondNum.substring(0,17);
         } else {
             let number = parseInt(event.target.textContent);
             if (secondNum.length < 17 && Number.isInteger(number)) {
@@ -137,7 +137,7 @@ function selectOperator(event) {
         } else {
             operator = event.target.textContent;
             editingFirst = false;
-            expression.textContent = `${firstNum} ${operator} `;
+            expression.textContent = `${firstNum.substring(0,17)} ${operator} `;
             answer.textContent = 0;
         }
     } 
@@ -154,7 +154,7 @@ function solve(event) {
         firstNum = divide(parseFloat(firstNum), parseFloat(secondNum)).toString();
     }
 
-    expression.textContent = expression.textContent.concat(secondNum);
+    expression.textContent = expression.textContent.concat(secondNum.substring(0,17));
     answer.textContent = firstNum.toString().substring(0,17);
     secondNum = '0';
     editingFirst = (event.target.textContent == '=') ? true : false;

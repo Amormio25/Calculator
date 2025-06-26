@@ -39,19 +39,23 @@ body {
     height: 32px;
     width: 330px;
     box-sizing: border-box;
-    padding-right: 5px;
+    padding: 0px 5px 0px 10px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     color: rgb(53, 52, 52);
     font-size: 1.3rem;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #answer {
     height: 48px;
     width: 330px;
     box-sizing: border-box;
-    padding-right: 5px;
+    padding: 0px 5px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
